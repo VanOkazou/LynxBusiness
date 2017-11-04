@@ -1,11 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
+  font-size: 1.2rem;
+
+  ${({ fixed }) => fixed && css`
+    position: absolute;
+    bottom: -70px;
+    z-index: 20;
+  `}
 
   ul {
     display: flex;
@@ -37,7 +44,7 @@ class InnerNav extends React.Component {
   render () {
     const  { children } = this.props;
     return (
-      <StyledNav>
+      <StyledNav {...this.props}>
         <ul>
           {children}
         </ul>

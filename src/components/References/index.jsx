@@ -27,11 +27,11 @@ const ReferencesScreen = styled(Screen)`
 
 class References extends Component {
   componentDidMount() {
-    window.removeEventListener("mousewheel", this.props.handleMouseWheel);
+    // window.removeEventListener("mousewheel", this.props.handleMouseWheel);
   }
 
   componentWillUnmount() {
-    window.addEventListener("mousewheel", this.props.handleMouseWheel);
+    // window.addEventListener("mousewheel", this.props.handleMouseWheel);
   }
 
   render() {
@@ -40,7 +40,7 @@ class References extends Component {
         <BigTitle>They <span>Trust</span> us.</BigTitle>
         <ul className="companies">
           {companies.map(c => (
-            <li>
+            <li key={c.name}>
               <img src={c.logo} alt={c.name} key={c.name} />
             </li>
           ))}

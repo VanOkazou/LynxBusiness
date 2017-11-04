@@ -64,7 +64,7 @@ export default () => injectGlobal`
 
     p {
       margin: 0;
-      line-height: 1.2;
+      line-height: 1.4;
     }
   }
 

@@ -3,10 +3,23 @@ import bgDark from '../../assets/img/bgDark.png';
 
 const Screen = styled.div`
   width: 100%;
+  max-width: 980px;
   min-height: 100%;
+  max-height 100%;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 20px 30px;
+  position: relative;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: auto;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
 
   ${({ centered }) => centered && css`
     justify-content: center;
@@ -37,8 +50,8 @@ const Title = styled.h1`
 `;
 
 const SmallTitle = Title.extend`
-  font-size: 6rem;
-  margin: 45px 0 55px;
+  font-size: 5rem;
+  margin: 15px 0 40px;
 `;
 
 const BigTitle = Title.extend`

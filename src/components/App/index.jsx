@@ -8,7 +8,15 @@ import normalize from "../../theme/normalize";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import Home from "../Home";
+
+// ABOUT
 import About from "../About";
+import AboutBreadcrumb from '../About/Breadcrumb';
+import Company from "../About/Company";
+import Team from "../About/Team";
+import Figures from "../About/Figures";
+
+
 import Skills from "../Skills";
 import References from "../References";
 import Contact from "../Contact";
@@ -23,16 +31,17 @@ const Div = styled.div`
   background-image: url(${bgDark});
   position: relative;
   overflow: hidden;
-  padding: 130px 0 100px;
+  padding: ${({ innerPage }) => innerPage ? '100px 0 120px' : '120px 0'};
 
   &::before, &::after {
     content: '';
     display: block;
     width: 1px;
-    height: 60px;
+    height: ${({ innerPage }) => innerPage ? '30px' : '60px'};
     background: ${({ theme }) => theme.color.light};
     position: absolute;
     left: 50%;
+    transition: all 0.5s ease;
   }
 
   &::before {
@@ -45,12 +54,25 @@ const Div = styled.div`
 
   .content {
     height: 100%;
-    max-height 100%;
-    overflow-y: auto;
+    position: relative;
+    z-index: 1;
 
     &>div {
       height: 100%;
     }
+  }
+
+  ${Nav} {
+    position: fixed;
+    left: 0;
+    top: ${({ innerPage }) => innerPage ? '60px' : '100px'};
+    z-index: 1;
+    transition: all 0.5s ease;
+  }
+
+  .screenWrapper {
+    position: relative;
+    height: 100%;
   }
 `;
 
@@ -68,8 +90,7 @@ class App extends React.Component {
 
   componentDidMount() {
     normalize();
-    window.addEventListener("mousewheel", this.handleMouseWheel);
-
+    //window.addEventListener("mousewheel", this.handleMouseWheel);
   }
 
   handleMouseWheel = e => {
@@ -98,10 +119,9 @@ class App extends React.Component {
 
   render() {
     const { location } = this.props;
-
     return (
       <ThemeProvider theme={theme}>
-        <Div>
+        <Div innerPage={this.props.location.pathname.split('/').length > 2}>
           <Nav />
           <div className="content">
             <TransitionGroup>
@@ -112,14 +132,21 @@ class App extends React.Component {
               >
                 <Switch location={location}>
                   <Route exact path="/" component={Home} />
-                  <Route path="/about" component={About} />
-                  <Route path="/skills" component={Skills} />
-                  <Route path="/references" render={() => {
+                  <Route exact path="/about" component={About} />
+                  <Route path="/about/:page" render={() => {
+                    console.log(this.props)
                     return (
-                      <References handleMouseWheel={this.handleMouseWheel}/>
+                      <div className="screenWrapper">
+                        {this.props.location.pathname === '/about/our-company' && <Company />}
+                        {this.props.location.pathname === '/about/our-team' && <Team />}
+                        {this.props.location.pathname === '/about/some-figures' && <Figures />}
+                        <AboutBreadcrumb fixed />
+                      </div>
                     )
                   }} />
-                  <Route path="/contact" component={Contact} />
+                  <Route exact path="/skills" component={Skills} />
+                  <Route exact path="/references" component={References} />
+                  <Route exact path="/contact" component={Contact} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

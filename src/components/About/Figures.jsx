@@ -46,7 +46,7 @@ class Figures extends Component {
           </li>
           <li>
             <div className="label">More than</div>
-            <div className="figure">100</div>
+            <div className="figure">50</div>
             <div className="supp">projects</div>
           </li>
         </ul>

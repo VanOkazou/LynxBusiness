@@ -3,7 +3,7 @@ import bgDark from '../../assets/img/bgDark.png';
 
 const Screen = styled.div`
   width: 100%;
-  max-width: 980px;
+  max-width: 1200px;
   min-height: 100%;
   max-height 100%;
   overflow-y: auto;

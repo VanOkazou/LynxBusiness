@@ -30,7 +30,11 @@ const ContactScreen = styled(Screen)`
       background: ${({ theme }) => theme.color.light};
       height: 40px;
       border: none;
-      text-transform: uppercase;
+      text-transform: uppercase
+
+      &:focus {
+        outline: none;
+      }
 
       &:hover {
         background: ${({ theme }) => theme.color.primary};
@@ -46,7 +50,7 @@ class Contact extends Component {
     return (
       <ContactScreen centered>
         <BigTitle>Get in <span>touch</span>.</BigTitle>
-        <form action="">
+        <form action="mailto:p.vannareth@gmail.com" method="post" enctype="text/plain">
           <input type="text" placeholder="Your name" />
           <textarea name="" id="" cols="30" rows="10"></textarea>
           <button>Send</button>

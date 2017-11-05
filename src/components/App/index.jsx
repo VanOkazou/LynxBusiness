@@ -65,7 +65,7 @@ const Div = styled.div`
   ${Nav} {
     position: fixed;
     left: 0;
-    top: ${({ innerPage }) => innerPage ? '60px' : '100px'};
+    top: ${({ innerPage }) => innerPage ? '60px' : '90px'};
     z-index: 1;
     transition: all 0.5s ease;
   }

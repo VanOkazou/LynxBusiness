@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Screen from '../Screen';
-import logo from '../../assets/img/logo.svg'
+import logo from '../../assets/img/logo.svg';
+import { media } from '../../utils/media';
 
 const HomeScreen = styled(Screen)`
   img {
@@ -13,6 +14,11 @@ const HomeScreen = styled(Screen)`
     font-size: 4rem;
     text-transform: uppercase;
     letter-spacing: 4px;
+    text-align: center;
+    ${media.tablet`
+      font-size: 3rem;
+      line-height: 1.2;
+    `}
 
     span {
       color: ${({ theme }) => theme.color.primary};

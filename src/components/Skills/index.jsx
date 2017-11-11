@@ -6,14 +6,12 @@ import devIcon from '../../assets/img/ico_dev.png';
 import mobileIcon from '../../assets/img/ico_mobile.png';
 import designIcon from '../../assets/img/ico_design.png';
 import securIcon from '../../assets/img/ico_secur.png';
+import { media } from '../../utils/media';
 
 const SkillsScreen = styled(Screen)`
   .skillsWrapper {
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    left: 0;
-    top: 140px;
 
     .singleSkill {
       width: calc(100% / 4);
@@ -30,6 +28,18 @@ const SkillsScreen = styled(Screen)`
           margin-bottom: 70px;
         }
       }
+
+      ${media.tablet`
+        width: 100%;
+        padding: 0;
+        border-right: none !important;
+        margin: 20px !important;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid ${({ theme }) => theme.color.light};
+          padding-bottom: 30px;
+        }
+      `}
 
       .icon {
         text-align: center;
@@ -52,8 +62,12 @@ const SkillsScreen = styled(Screen)`
 
       .technos {
         margin-top: 35px;
+        ${media.tablet`
+          text-align: center;
+        `}
 
         ul {
+
           li {
             margin-bottom: 5px;
             &::before {

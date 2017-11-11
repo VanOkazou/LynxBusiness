@@ -81,7 +81,7 @@ export default () => injectGlobal`
   }
 
   .fadeTranslate-exit {
-    opacity: 1;
+    opacity: 0;
   }
 
   .fadeTranslate-exit.fadeTranslate-exit-active {

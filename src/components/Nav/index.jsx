@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { media } from '../../utils/media';
 
 export class Navigation extends React.Component {
   render () {
@@ -37,6 +38,9 @@ const Nav = styled(Navigation)`
 
     li {
       margin: 0 12px;
+      ${media.tablet`
+        margin: 7px;
+      `}
 
       a {
         color: ${({ theme }) => theme.color.light};

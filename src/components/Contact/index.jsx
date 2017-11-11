@@ -50,7 +50,7 @@ class Contact extends Component {
     return (
       <ContactScreen centered>
         <BigTitle>Get in <span>touch</span>.</BigTitle>
-        <form action="mailto:p.vannareth@gmail.com" method="post" enctype="text/plain">
+        <form action="mailto:p.vannareth@gmail.com" method="post" encType="text/plain">
           <input type="text" placeholder="Your name" />
           <textarea name="" id="" cols="30" rows="10"></textarea>
           <button>Send</button>

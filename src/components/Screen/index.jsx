@@ -1,7 +1,16 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import bgDark from '../../assets/img/bgDark.png';
+import { media } from '../../utils/media';
 
-const Screen = styled.div`
+const ScreenWrapper = ({ className, children }) => (
+  <div className={className}>
+    <div>
+      {children}
+    </div>
+  </div>
+)
+const Screen = styled(ScreenWrapper)`
   width: 100%;
   max-width: 1200px;
   min-height: 100%;
@@ -15,6 +24,10 @@ const Screen = styled.div`
   line-height: 1.4;
   margin: auto;
 
+  & > div {
+    margin: auto;
+  }
+
   p {
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -24,6 +37,10 @@ const Screen = styled.div`
   ${({ centered }) => centered && css`
     justify-content: center;
     align-items: center;
+
+    ${media.tablet`
+      justify-content: flex-start;
+    `}
   `}
 
   ${({ justifyCenter }) => justifyCenter && css`
@@ -43,6 +60,7 @@ const Title = styled.h1`
   color: #888;
   text-transform: uppercase;
   line-height: 1;
+  text-align: center;
 
   span {
     color: ${({ theme }) => theme.color.primary};
@@ -52,11 +70,19 @@ const Title = styled.h1`
 const SmallTitle = Title.extend`
   font-size: 5rem;
   margin: 15px 0 40px;
+  ${media.tablet`
+    font-size: 3rem;
+    margin: 15px 0 20px;
+  `}
 `;
 
 const BigTitle = Title.extend`
   font-size: 10rem;
   margin: 0 0 25px;
+
+  ${media.tablet`
+    font-size: 5rem;
+  `}
 `;
 
 export { DarkScreen, SmallTitle, BigTitle };

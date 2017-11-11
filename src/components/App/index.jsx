@@ -8,6 +8,7 @@ import normalize from "../../theme/normalize";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import Home from "../Home";
+import { media } from '../../utils/media';
 
 // ABOUT
 import About from "../About";
@@ -32,6 +33,9 @@ const Div = styled.div`
   position: relative;
   overflow: hidden;
   padding: ${({ innerPage }) => innerPage ? '100px 0 120px' : '120px 0'};
+  ${media.tablet`
+    padding: ${({ innerPage }) => innerPage ? '60px 0' : '80px 0 60px'};
+  `}
 
   &::before, &::after {
     content: '';
@@ -42,6 +46,10 @@ const Div = styled.div`
     position: absolute;
     left: 50%;
     transition: all 0.5s ease;
+
+    ${media.tablet`
+      height: ${({ innerPage }) => innerPage ? '15px' : '30px'};
+    `}
   }
 
   &::before {
@@ -68,12 +76,20 @@ const Div = styled.div`
     top: ${({ innerPage }) => innerPage ? '60px' : '90px'};
     z-index: 1;
     transition: all 0.5s ease;
+
+    ${media.tablet`
+      top: ${({ innerPage }) => innerPage ? '30px' : '45px'};
+    `}
   }
 
   .screenWrapper {
     position: relative;
     height: 100%;
   }
+`;
+
+const StyledFooter = styled(Footer)`
+  display: ${({ innerPage }) => innerPage ? 'none' : 'flex'};
 `;
 
 class App extends React.Component {
@@ -140,7 +156,7 @@ class App extends React.Component {
                         {this.props.location.pathname === '/about/our-company' && <Company />}
                         {this.props.location.pathname === '/about/our-team' && <Team />}
                         {this.props.location.pathname === '/about/some-figures' && <Figures />}
-                        <AboutBreadcrumb fixed />
+
                       </div>
                     )
                   }} />
@@ -151,7 +167,10 @@ class App extends React.Component {
               </CSSTransition>
             </TransitionGroup>
           </div>
-          <Footer />
+          {this.props.location.pathname.includes('about/') &&
+            <AboutBreadcrumb fixed />
+          }
+          <StyledFooter innerPage={this.props.location.pathname.split('/').length > 2}/>
         </Div>
       </ThemeProvider>
     );

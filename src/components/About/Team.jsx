@@ -33,8 +33,14 @@ const TeamScreen = styled(Screen)`
         text-transform: uppercase;
         font-size: 2rem;
         font-family: ${({ theme }) => theme.font.secondary};
-        font-weight: 700;
         margin-bottom: 0;
+        font-weight: 300;
+        color: #999;
+
+        strong {
+          font-weight: 700;
+          color: ${({ theme }) => theme.color.text};
+        }
       }
 
       .job {
@@ -63,14 +69,14 @@ class Team extends Component {
   render() {
     return (
       <TeamScreen centered>
-        <SmallTitle>Our <span>teameee.</span></SmallTitle>
+        <SmallTitle>Our <span>team.</span></SmallTitle>
         <ul>
           <li>
             <div
               className="avatar"
               style={{ backgroundImage: `url(${tristanPic})` }}
             ></div>
-            <p className="name">Tristan Granier</p>
+            <p className="name"><strong>Tristan</strong> Granier</p>
             <p className="job">Lead Développeur, Security tools developer</p>
             <div className="social">
               <a href="mailto:#" title="mail" className="mail">
@@ -86,7 +92,7 @@ class Team extends Component {
               className="avatar"
               style={{ backgroundImage: `url(${vincentPic})` }}
             ></div>
-            <p className="name">Vincent Tribouillois</p>
+            <p className="name"><strong>Vincent</strong> Tribouillois</p>
             <p className="job">Gérant chez Lynxbusiness - Sepalevy - Co-fondateur Lynxframework</p>
             <div className="social">
               <a href="mailto:#" title="mail" className="mail">

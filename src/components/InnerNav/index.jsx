@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { media } from '../../utils/media';
 
 const StyledNav = styled.nav`
   width: 100%;
@@ -9,9 +10,13 @@ const StyledNav = styled.nav`
   font-size: 1.2rem;
 
   ${({ fixed }) => fixed && css`
-    position: absolute;
-    bottom: -70px;
+    position: fixed;
+    bottom: 40px;
     z-index: 20;
+
+    ${media.tablet`
+      bottom: 20px;
+    `}
   `}
 
   ul {

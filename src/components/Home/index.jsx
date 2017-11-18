@@ -7,11 +7,16 @@ import { media } from '../../utils/media';
 const HomeScreen = styled(Screen)`
   img {
     height: 400px;
+    margin: auto;
+    display: block;
+    ${media.tablet`
+      height: 280px;
+    `}
   }
 
   h1 {
     font-family: ${({ theme }) => theme.font.secondary};
-    font-size: 4rem;
+    font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: 4px;
     text-align: center;

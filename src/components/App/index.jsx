@@ -17,8 +17,8 @@ import Company from "../About/Company";
 import Team from "../About/Team";
 import Figures from "../About/Figures";
 
-
 import Skills from "../Skills";
+import Works from "../Works";
 import References from "../References";
 import Contact from "../Contact";
 
@@ -161,6 +161,7 @@ class App extends React.Component {
                     )
                   }} />
                   <Route exact path="/skills" component={Skills} />
+                  <Route exact path="/works" component={Works} />
                   <Route exact path="/references" component={References} />
                   <Route exact path="/contact" component={Contact} />
                 </Switch>

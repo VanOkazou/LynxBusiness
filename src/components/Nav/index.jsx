@@ -18,11 +18,14 @@ export class Navigation extends React.Component {
             <NavLink to="/skills" activeClassName="active">Skills</NavLink>
           </li>
           <li>
-            <NavLink to="/references" activeClassName="active">References</NavLink>
+            <NavLink to="/works" activeClassName="active">Works</NavLink>
           </li>
           <li>
-            <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+            <NavLink to="/references" activeClassName="active">References</NavLink>
           </li>
+          {/* <li>
+            <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+          </li> */}
         </ul>
       </nav>
     )

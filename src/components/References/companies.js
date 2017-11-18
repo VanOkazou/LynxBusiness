@@ -6,7 +6,7 @@ import prodigious from '../../assets/img/prodigious_w.png';
 import airfrance from '../../assets/img/airfrance_w.png';
 import bnp from '../../assets/img/bnp_w.png';
 
-export const companies = [
+const companies = [
   { name: 'cacherel', logo: cacherel },
   { name: 'custics', logo: custics },
   { name: 'loreal', logo: loreal },
@@ -15,3 +15,5 @@ export const companies = [
   { name: 'bnp', logo: bnp },
   { name: 'airfrance', logo: airfrance },
 ];
+
+export default companies;

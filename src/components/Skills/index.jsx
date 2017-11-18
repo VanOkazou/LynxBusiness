@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Screen, { BigTitle } from '../Screen';
-import InnerNav, { Item } from '../InnerNav';
 import devIcon from '../../assets/img/ico_dev.png';
 import mobileIcon from '../../assets/img/ico_mobile.png';
 import designIcon from '../../assets/img/ico_design.png';

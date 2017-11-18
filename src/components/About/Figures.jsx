@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Screen, { SmallTitle } from '../Screen';
+import Screen from '../Screen';
 
 const FiguresScreen = styled(Screen)`
   ul {

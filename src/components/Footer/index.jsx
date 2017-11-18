@@ -59,10 +59,10 @@ class Footer extends Component {
         </div>
         <div className="sharelinks">
           <p>Follow us</p>
-          <a href="#" title="LinkedIn" target="_blank">
+          <a href="https://www.linkedin.com/in/tristangranierlynx/" rel="noopener noreferrer" title="LinkedIn" target="_blank">
             <i className="fa fa-linkedin" aria-hidden="true"></i>
           </a>
-          <a href="#" title="GitHub" target="_blank">
+          <a href="https://github.com/graniet" title="GitHub" rel="noopener noreferrer" target="_blank">
             <i className="fa fa-github" aria-hidden="true"></i>
           </a>
         </div>

@@ -20,6 +20,7 @@ import Figures from "../About/Figures";
 import Skills from "../Skills";
 import Works from "../Works";
 import References from "../References";
+import Press from "../Press";
 import Contact from "../Contact";
 
 const Div = styled.div`
@@ -163,6 +164,7 @@ class App extends React.Component {
                   <Route exact path="/skills" component={Skills} />
                   <Route exact path="/works" component={Works} />
                   <Route exact path="/references" component={References} />
+                  <Route exact path="/press" component={Press} />
                   <Route exact path="/contact" component={Contact} />
                 </Switch>
               </CSSTransition>

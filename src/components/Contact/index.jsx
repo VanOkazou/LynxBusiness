@@ -27,14 +27,24 @@ const Mail = styled.a`
   }
 `;
 
+const Address = styled.p`
+  margin-top: 35px;
+  text-align: center;
+  font-size: 3rem;
+  font-size: 700;
+  ${media.tablet`
+    font-size: 2rem;
+  `}
+`;
+
 const ContactScreen = styled(Screen)``;
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
     defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultCenter={{ lat: 49.06863, lng: 2.081229 }}
   >
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 49.06863, lng: 2.081229 }} />}
   </GoogleMap>
 ))
 
@@ -54,6 +64,10 @@ class Contact extends Component {
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
+        <Address>
+          10 rue Jean Sebastien Bach<br />
+          95520 Osny
+        </Address>
       </ContactScreen>
     );
   }

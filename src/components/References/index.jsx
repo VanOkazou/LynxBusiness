@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Screen, { BigTitle } from '../Screen';
 import companies from './companies';
-import { media } from '../../utils/media';
 
 const Company = styled.li`
   margin: 15px 25px;

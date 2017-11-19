@@ -26,9 +26,9 @@ export class Navigation extends React.Component {
           <li>
             <NavLink to="/press" activeClassName="active">Press</NavLink>
           </li>
-          {/* <li>
+          <li>
             <NavLink to="/contact" activeClassName="active">Contact</NavLink>
-          </li> */}
+          </li>
         </ul>
       </nav>
     )
